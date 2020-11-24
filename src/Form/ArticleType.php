@@ -25,7 +25,7 @@ class ArticleType extends AbstractType
             ->add('content', null, [
                 'label' => 'Contenu',
             ])
-            // ->add('createdAt')
+            ->add('createdAt')
             ->add('category', null, [
                 'label' => 'Catégorie',
             ])

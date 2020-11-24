@@ -41,19 +41,17 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ path('homepage') }}">Home</a>
+                    <a class="nav-link" href="#TODO">Home</a>
                 </li>
-{#                {% if is_granted('ROLE_ADMIN')  %}#}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Admin
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ path('category_index') }}">Catégories</a>
+                            <a class="dropdown-item" href="#TODO">Catégories</a>
                             <a class="dropdown-item" href="{{ path('article_index') }}">Articles</a>
                         </div>
                     </li>
-{#                {% endif %}#}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Hello
@@ -78,8 +76,8 @@
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="site-heading">
-                    <h1>{% block title %}Site corrigé{% endblock %}</h1>
-                    <span class="subheading">{% block subtitle %}Le site terminé :x{% endblock %}</span>
+                    <h1>{% block title %}Codeblog{% endblock %}</h1>
+                    <span class="subheading">{% block subtitle %}Un site bac à sable{% endblock %}</span>
                 </div>
             </div>
         </div>
@@ -100,7 +98,7 @@
 
                         <ul>
                             <li>
-                                <a href="https://slides.com/gotorahoutan/epsi-symfony" target="_blank">
+                                <a href="https://slides.com/gotorahoutan/epsi" target="_blank">
                                         <i class="fa fa-external-link-alt"></i>
                                     Les slides du prof
                                 </a>
@@ -131,23 +129,28 @@
                             </li>
                         </ul>
                     </div>
-                    <h4>L'exam :o</h4>
+                    <h4></h4>
                     <p>
-                        Remplacer les liens du menu pour qu'ils pointent sur les bonnes pages <em>/4pt</em>
+                        Faire la page Hello Prénom
+                        <br><br>
+                        Faire la page Hello Worlds
+                        <br><br>
+                        Remplacer les liens du menu pour qu'ils pointent sur les bonnes pages
                         <br><br>
                         Enlever le champ Created At des formulaires de création/modification d'article
-                        <em>/1pt</em>
                         <br><br>
-                        Générer le CRUD des catégories via la commande <code>php bin/console make:crud</code>  <em>/2pt</em><br>
-                        - Rajouter le lien dans le menu admin -> Catégories<em>/1pt</em><br>
-                        - inclure les pages du crud dans le design existant <em>/2pt</em><br>
-                        - Ajouter une contrainte sur le formulaire Catégorie: Lorsqu'on créé ou modifie une catégorie, le nom doit d'être d'au moins 4 caractères <em>/2pt</em>
+                        Générer le CRUD des catégories via la commande <code>php bin/console make:crud</code>  <br>
+                        - Rajouter le lien dans le menu admin -> Catégories<br>
+                        - inclure les pages du crud dans le design existant<br>
+                        - Ajouter une contrainte sur le formulaire Catégorie: Lorsqu'on créé ou modifie une catégorie, le nom doit d'être d'au moins 4 caractères
                         <br><br>
-                        Lorsque j'accède à la page category_show (par exemple /category/1) j'aimerai voir la liste des articles de cette catégorie <em>/5pt</em>
+                        Lorsque j'accède à la page category_show (par exemple /category/1) j'aimerai voir la liste des articles de cette catégorie
                         <br><br>
-                        Ordonner la liste des articles de la page article_index par ordre décroissant (requete sql déjà écrite) <em>/1pt</em>
+                        Ordonner la liste des articles de la page article_index par ordre décroissant
                         <br><br>
-                        Sécuriser la page category_delete pour n'être accessible que par l'admin <em>/2pt</em>
+                        Sécuriser la page category_delete pour n'être accessible que par l'admin
+                        <br><br>
+                        Mettre en place une api pour récupérer nos articles via application mobile
                         <br><br>
                     </p>
                 </div>
@@ -159,7 +162,7 @@
                             {{ lastArticle.title }}
                         </h4>
                         <h5 class="post-subtitle">
-                            {{ lastArticle.content }}
+                            {{ lastArticle.content|raw }}
                         </h5>
                     </a>
                     <p class="post-meta">Posted by
@@ -170,12 +173,12 @@
 
                 <div>
                     {% for category in categories %}
-                        <div><a href="{{ path('category_show', {'id': category.id}) }}">{{ category.name }}</a>
+                        <div><a href="#TODO">{{ category.name }}</a>
                             ({{ category.articles|length }})</div>
 
                         {% for article in category.articles %}
                            <div class="pl-3">
-                               <a href="{{ path('article_show', {'id': article.id}) }}">{{ article.title }}</a></div>
+                               <a href="#TODO">{{ article.title }}</a></div>
                         {% endfor %}
                     {% endfor %}
                 </div>
