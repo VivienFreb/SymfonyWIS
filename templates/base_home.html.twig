@@ -41,14 +41,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#TODO">Home</a>
+                    <a class="nav-link" href="{{ path('homepage') }}">Home</a>
                 </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Admin
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#TODO">Catégories</a>
+                            <a class="dropdown-item" href="{{ path('category_index') }}">Catégories</a>
                             <a class="dropdown-item" href="{{ path('article_index') }}">Articles</a>
                         </div>
                     </li>
@@ -157,7 +157,7 @@
             </div>
             <div class="col-lg-4 col-md-10">
                 <div class="post-preview">
-                    <a href="#TODO">
+                    <a href="{{ path('article_show', {'id' : lastArticle.id}) }}">
                         <h4 class="">
                             {{ lastArticle.title }}
                         </h4>
@@ -173,19 +173,19 @@
 
                 <div>
                     {% for category in categories %}
-                        <div><a href="#TODO">{{ category.name }}</a>
+                        <div><a href="{{ path('category_show', {'id' : category.id }) }}">{{ category.name }}</a>
                             ({{ category.articles|length }})</div>
 
                         {% for article in category.articles %}
                            <div class="pl-3">
-                               <a href="#TODO">{{ article.title }}</a></div>
+                               <a href="{{ path('article_show', {'id' : article.id })}}">{{ article.title }}</a></div>
                         {% endfor %}
                     {% endfor %}
                 </div>
 
                 <!-- Pager -->
                 <div class="clearfix">
-                    <a class="btn btn-primary float-right" href="#TODO">Liste des articles</a>
+                    <a class="btn btn-primary float-right" href="{{ path('article_index') }}">Liste des articles</a>
                 </div>
             </div>
     </div>

@@ -22,7 +22,8 @@ class HelloController extends AbstractController
      */
     public function helloNumber($number)
     {
-        $worlds = 'TODO';
+        $worlds = str_repeat('Worlds ', $number);
+
 
         return $this->render('hello/hello_number.html.twig', array(
             'worlds' => $worlds,
@@ -35,7 +36,7 @@ class HelloController extends AbstractController
     public function helloFirstname($firstname)
     {
         return $this->render('hello/hello_firstname.html.twig', array(
-            'name' => 'TODO',
+            'name' => $firstname,
         ));
     }
 
